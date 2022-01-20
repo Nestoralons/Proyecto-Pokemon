@@ -1,0 +1,36 @@
+.portada{
+    background-image: linear-gradient(to bottom right,
+    #5d1a23 0%,
+    #5f252a 20%,
+    #aa3a3e 40%,
+    #7c2427 60%,
+    #9b3134 80%
+);
+    background-repeat: no-repeat;
+    background-size:200% 200% ;
+    position:fixed;
+    min-width: 100%;
+    min-height: 100%;
+    animation: mov 6s linear infinite alternate;
+    
+
+}
+
+@keyframes mov{
+    from {
+        background-position: 0 0;
+
+    }
+    to{
+        background-position: 100% 100%;
+    }
+}
+.boton{
+    background-color:#ce7885;
+    border-color: white;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin:5px;
+    font-size:2em;
+    cursor:pointer;
+}

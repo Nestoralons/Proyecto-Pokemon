@@ -1,0 +1,132 @@
+.portada{
+    background-image: linear-gradient(to bottom right,
+    #5d1a23 0%,
+    #5f252a 20%,
+    #aa3a3e 40%,
+    #7c2427 60%,
+    #9b3134 80%
+);
+    background-repeat: no-repeat;
+    background-size:200% 200% ;
+    position:fixed;
+    min-width: 100%;
+    min-height: 100%;
+    animation: mov 6s linear infinite alternate;
+    
+
+}
+
+@keyframes mov{
+    from {
+        background-position: 0 0;
+
+    }
+    to{
+        background-position: 100% 100%;
+    }
+}
+.boton {
+    border: 3px solid rgba(100,100,100,0.1);
+    border-radius: 8px;
+    background-size:190%;
+    margin-top:10px;
+    background-image: linear-gradient(to left, rgb(230, 197, 90),#641c34,rgb(230, 197, 90));
+    
+    height: 4rem;
+    
+    font-size:30px;
+    width:300px;
+    transition: 0.5s ;
+    cursor:pointer;
+    
+    
+    }
+    .boton:hover{
+        background-position: right;
+        color:rgb(255, 255, 255);
+        border-color: #dfc037;
+        border-style:ridge;
+    }
+    .margen{
+    width: fit-content;
+    margin:30px 30px
+    }
+    .caja{
+        width: 95%;
+        height: 80%;
+        position: absolute;
+      margin-left: 50px;
+        background-size: cover;
+        background-image: linear-gradient(to left, rgb(214, 179, 64),#6b1b36,rgb(214, 179, 64));
+    
+        border-radius: 999rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: 0;
+        align-content: center;
+        
+
+    }
+    .caja:hover{
+        opacity:1;
+    }
+    .fila{
+        display:flex;
+        flex-direction: row;
+        column-gap: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+    }
+    .cajita{
+        display:flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    
+        
+       
+    }
+    .titulo{
+        margin:0;
+
+    }
+    .imagen{
+        width:50%;
+    }
+    .datos{
+        width:50%;
+       
+        margin:60px 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap:25px;
+        font-size: 1.2rem;
+        
+    }
+    .foto{
+        width: 80%;
+        height: 80%;
+        margin:60px 40px;
+       
+        
+    }
+    .tipos{
+        display: flex;
+        flex-direction: row;
+        column-gap:50px;
+        justify-content: center;
+        font-size:1.5rem;
+    }
+    .cajatipo{
+        display:flex;
+        flex-direction: column;
+        row-gap:0px;
+        
+    }
+    .casilla{
+        margin-bottom:0px;
+        margin-top:0px;
+        
+    }
+    

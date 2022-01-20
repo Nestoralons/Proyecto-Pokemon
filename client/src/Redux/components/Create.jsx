@@ -6,6 +6,7 @@ import { gettypes } from "../actions/actions";
 import { Post } from "../actions/actions";
 import imagen from '../imagen/pokemondefault.jpg'
 import {Link} from 'react-router-dom';
+import styles from './Create.module.css'
 export default function Create() {
     const [Data,setData]=useState({
                 Nombre:'',
@@ -115,219 +116,79 @@ setData({
         }
         
     return (
-        <div>
+        <div className={styles.portada}>
+          <div className={styles.margen
+          }>
            <Link to='/Pokemons'>
-            <p>Regresar a home</p>
+            <button className={styles.boton}>Regresar a home</button>
            </Link>
+            </div>
+           
        <form onSubmit={handlesubmit}>
-<fieldset>
-<legend>Creación de Pokemon</legend>
+<fieldset className={styles.texto}>
+<legend className={styles.label}>Creación de Pokemon</legend>
+<br/>
+          <div className={styles.datos}>
 
-    <div>
+        
+    <div className={styles.separacion}>
       <label htmlFor="Nombre">Nombre</label>
-      <input type="text" name="Nombre" id="Nombre"  required  pattern="[a-zA-Z]+" value={Data.Nombre} onChange={handlechange}/>
+      <input className={styles.input} type="text" name="Nombre" id="Nombre"  required  value={Data.Nombre} onChange={handlechange}/>
       
-    </div>
-    <br/>
-    <div>
+    </div >
+
+    <div className={styles.separacion}>
       <label htmlFor="Imagen">Imagen</label>
-      <input type='url' name="Imagen" id="Imagen"  value={Data.Imagen} onChange={handlechange}/>
+      <input className={styles.input}  type='url' name="Imagen" id="Imagen"  value={Data.Imagen} onChange={handlechange}/>
       
     </div>
-    <br/>
-    <div>
+
+    <div className={styles.separacionn1}>
       <label htmlFor="Altura">Altura</label>
-      <input type="number" name="Altura" id="Altura" min='0' max='200' required value={Data.Altura} onChange={handlechange}/>
+      <input className={styles.input1}  type="number" name="Altura" id="Altura" min='0' max='200' required value={Data.Altura} onChange={handlechange}/>
     </div>
-    <br/>
-    <div>
+  
+    <div className={styles.separacionn2}>
       <label htmlFor="Peso">Defensa</label>
-      <input type="number" name="Peso" id="Peso" min='0' max='200' required value={Data.Peso} onChange={handlechange}/>
+      <input  className={styles.input1}  type="number" name="Peso" id="Peso" min='0' max='200' required value={Data.Peso} onChange={handlechange}/>
     </div>
     <br/>
-    <fieldset>
-        <legend>Estadisticas</legend>
-        <div>
+    </div>
+    <fieldset className={styles.estadisticas}>
+        <legend className={styles.label}>Estadisticas</legend>
+        <div className={styles.s}>
+        <div className={styles.sep} >
       <label htmlFor="Fuerza">Fuerza</label>
-      <input type="number" name="Fuerza" id="Fuerza" min='0' max='200' required value={Data.Fuerza} onChange={handlechange}/>
+      <input className={styles.input1}   type="number" name="Fuerza" id="Fuerza" min='0' max='200' required value={Data.Fuerza} onChange={handlechange}/>
     
     </div>
-    <div>
+    <div className={styles.sep}>
       <label htmlFor="Vida">Vida</label>
-      <input type="number" name="Vida" id="Vida" min='0' max='200' required value={Data.Vida} onChange={handlechange}/>
+      <input className={styles.input1}  type="number" name="Vida" id="Vida" min='0' max='200' required value={Data.Vida} onChange={handlechange}/>
     </div>
-    <div>
+    <div className={styles.sep}>
       <label htmlFor="Velocidad">Velocidad</label>
-      <input type="number" name="Velocidad" id="Velocidad" min='0' max='200' required value={Data.Velocidad} onChange={handlechange}/>
+      <input className={styles.input1}  type="number" name="Velocidad" id="Velocidad" min='0' max='200' required value={Data.Velocidad} onChange={handlechange}/>
     </div>
-    <div>
+    <div className={styles.sep}>
       <label htmlFor="Defensa">Defensa</label>
-      <input type="number" name="Defensa" id="Defensa" min='0' max='200' required value={Data.Defensa} onChange={handlechange}/>
+      <input className={styles.input1}  type="number" name="Defensa" id="Defensa" min='0' max='200' required value={Data.Defensa} onChange={handlechange}/>
+    </div>
     </div>
         </fieldset>
 
-    <fieldset>
+    <fieldset className={styles.tipos}>
     <legend>Tipos</legend>
-    {Tipos?.map((elemento)=>(<label key={elemento}><input type='checkbox' name="Tipo" id="Tipo" key={elemento}  value={elemento}  onChange={handletipos}  />{elemento}</label>))
+    {Tipos?.map((elemento)=>(<label key={elemento}><input className={styles.circulo} type='checkbox' name="Tipo" id="Tipo" key={elemento}  value={elemento}  onChange={handletipos}  />{elemento}</label>))
     }
     </fieldset>
 
 
     
-    <button>Enviar</button>
+    <button className={styles.boton}>Crear</button>
 </fieldset>
-
-  {/* <fieldset>
-    <legend>Tamaño del zumo de fruta</legend>
-    <p>
-      <input type="radio" name="size" id="size_1" value="small"/>
-      <label htmlFor="size_1">Pequeño</label>
-    </p>
-    <p>
-      <input type="radio" name="size" id="size_2" value="medium"/>
-      <label htmlFor="size_2">Mediano</label>
-    </p>
-    <p>
-      <input type="radio" name="size" id="size_3" value="large"/>
-      <label htmlFor="size_3">Grande</label>
-    </p>
-  </fieldset>
-  <fieldset>
-  <legend>Información Personal</legend>
-  Nombre: <input name='nombre' type='text' tabindex='1'/>
-  Apellidos: <input name='apellidos' type='text' tabindex='2'/>
- </fieldset>
-
- <fieldset>
-  <legend>edad</legend>
-  <input type='checkbox' tabindex='20'
-            name='edad' value='20-39' /> 
-  <input type='checkbox' tabindex='21'
-            name='edad' value='40-59' /> 
-  <input type='checkbox' tabindex='22'
-            name='edad' value='60-79' />
- </fieldset>
-
- <form>
-  <p>
-    <input type="checkbox" id="taste_1" name="taste_cherry" value="cherry"/>
-    <label for="taste_1">Me gustan las cerezas</label>
-  </p>
-  <p>
-    <input type="checkbox" id="taste_2" name="taste_banana" value="banana"/>
-    <label for="taste_2">Me gustan los plátanos</label>
-  </p>
 </form>
 
-<p>Los campos obligatorios se marcan con un <abbr title = "required">*</abbr>.</p>
-
-
-<div>
-  <label for="username">Nombre:</label>
-  <input type="text" name="username"/>
-  <label for="username"><abbr title="required" aria-label="required">*</abbr></label>
-</div>
-
-
-<div>
-  <label for="username">
-    <span>Nombre:</span>
-    <input id="username" type="text" name="username"/>
-    <abbr title="required" aria-label="required">*</abbr>
-  </label>
-</div>
-
-
-<div>
-  <label for="username">Nombre: <abbr title="required" aria-label="required">*</abbr></label>
-  <input id="username" type="text" name="username"/>
-</div>
-
-
-
-
-
-
-
-<section>
-    <h2>Información de contacto</h2>
-    <fieldset>
-      <legend>Título</legend>
-      <ul>
-          <li>
-            <label for="title_1">
-              <input type="radio" id="title_1" name="title" value="K" />
-              Rey
-            </label>
-          </li>
-          <li>
-            <label for="title_2">
-              <input type="radio" id="title_2" name="title" value="Q"/>
-              Reina
-            </label>
-          </li>
-          <li>
-            <label for="title_3">
-              <input type="radio" id="title_3" name="title" value="J"/>
-              Bufón
-            </label>
-          </li>
-      </ul>
-    </fieldset>
-    <p>
-      <label for="name">
-        <span>Nombre:</span>
-        <strong><abbr title="required">*</abbr></strong>
-      </label>
-      <input type="text" id="name" name="username"/>
-    </p>
-    <p>
-      <label for="mail">
-        <span>Correo electrónico:</span>
-        <strong><abbr title="required">*</abbr></strong>
-      </label>
-      <input type="email" id="mail" name="usermail"/>
-    </p>
-    <p>
-      <label for="pwd">
-        <span>Contraseña:</span>
-        <strong><abbr title="required">  *  </abbr></strong>
-      </label>
-      <input type="password" id="pwd" name="password"/>
-    </p>
-</section>
-
-
-<section>
-    <h2>Información de pago</h2>
-    <p>
-      <label for="card">
-        <span>Tipo de tarjeta:</span>
-      </label>
-      <select id="card" name="usercard">
-        <option value="visa">Visa</option>
-        <option value="mc">Mastercard</option>
-        <option value="amex">American Express</option>
-      </select>
-    </p>
-    <p>
-      <label for="number">
-        <span>Número de tarjeta:</span>
-        <strong><abbr title="required">*</abbr></strong>
-      </label>
-      <input type="tel" id="number" name="cardnumber"/>
-    </p>
-    <p>
-      <label for="date">
-        <span>Fecha de caducidad:</span>
-        <strong><abbr title="required">*</abbr></strong>
-        <em>el formato mm/aa</em>
-      </label>
-      <input type="date" id="date" name="expiration"/>
-    </p>
-</section>
-<p> <button type="submit">Validar el pago</button> </p> */}
-</form>
 
         </div>
     )

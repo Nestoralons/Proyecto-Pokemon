@@ -6,7 +6,8 @@ import { GET_ALL_POKEMONS,
      SORT_BY,
      SORT_BY_NAME,
      GET_POKEMON_NAME,
-     POST
+     POST,
+     DELETE
 } from "../actions/actions";
 const initialState={
     AllPokemons:[],
@@ -100,6 +101,12 @@ export default function rootReducer(state=initialState,action) {
         return {
             ...state
         } 
+        case DELETE:
+            return {
+                ...state,
+                Detail:{}
+                
+            }
         default:
             return state
     }

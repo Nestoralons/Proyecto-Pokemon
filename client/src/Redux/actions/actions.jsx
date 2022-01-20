@@ -8,6 +8,7 @@ export const SORT_BY='SORT_BY';
 export const SORT_BY_NAME='SORT_BY_NAME';
 export const GET_POKEMON_NAME='GET_POKEMON_NAME'
 export const POST='POST';
+export const DELETE='DELETE'
 
 
 export function getallpokemons() {
@@ -72,6 +73,12 @@ export function Post(payload){
         let info=await axios.post('http://localhost:3001/pokemons',payload);
         console.log(info)
         return info
+    }
+}
+export function borrardetalle(payload){
+    return {
+        type:DELETE,
+    payload:payload
     }
 }
 

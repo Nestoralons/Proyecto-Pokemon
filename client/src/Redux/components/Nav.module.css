@@ -1,0 +1,11 @@
+.boton{
+ padding: 20px;
+ border-radius: 30px;
+ font-size: 1em;
+}
+.filtro{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 39px;
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import {useState} from "react";
 import Pokemons from './Pokemons'
 import Nav from './Nav';
+import styles from './Paginado.module.css'
 export default function Paginado({pokemons,setValor}) {
     const [Page,setPage]=useState(1);
   const count=pokemons.length 
@@ -21,7 +22,7 @@ setValor(Math.random())
     return (
         <div>
        <Nav Pagina={setPage} setValor={setValor}/>
-           {Pages.map(el=><button key ={el} onClick={(e)=>handleClick(e,el)}>{el}</button>)
+           {Pages.map(el=><button className={styles.boton} key ={el} onClick={(e)=>handleClick(e,el)}>{el}</button>)
 }
 
 {
