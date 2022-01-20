@@ -44,19 +44,23 @@ function handleSortByName(e){
         <Link to='/Pokemons/create'>
         <h2>Crear Pokemon</h2>
          </Link>
-            <button onClick={handlesubmit}>Refrescar la lista de Pokemones </button>
-        <h2>Tipos</h2>
-        {
-            Tipos?.map(el=><button onClick={handleclick} value={el} key={el}>{el}</button>)
-        }
-        <div>
+            
+        <h2 className={styles.h2}>TIPOS</h2>
+        <div className={styles.tipos}>
 
-        <button  value='DB' onClick={handleClick}>CREATED POKEMON</button>
-        <button value='API' onClick={handleClick}>API POKEMON</button>
-        
+        {
+            Tipos?.map(el=><button className={styles.boton1} onClick={handleclick} value={el} key={el}>{el[0].toUpperCase()+el.slice(1)}</button>)
+        }
         </div>
         <div>
-            <h2>SORT BY FUERZA</h2>
+        <h2 className={styles.h2} >FILTRAR </h2>
+        <div className={styles.filtro} >
+        <button  className={styles.boton} value='DB' onClick={handleClick}>DB</button>
+        <button className={styles.boton} value='API' onClick={handleClick}>API</button>
+        </div>
+        </div>
+        <div>
+            <h2 className={styles.h2}>FILTRAR POR FUERZA</h2>
             <div className={styles.filtro}>
 
         <button className={styles.boton} value='ASC' onClick={handleSort}>ASCENDENTE</button>
@@ -65,7 +69,7 @@ function handleSortByName(e){
 
         </div>
         <div>
-            <h2>SORT BY NAME</h2>
+            <h2 className={styles.h2}>FILTRAR POR NOMBRE</h2>
             <div className={styles.filtro}>
 
         <button className={styles.boton}value='ASC' onClick={handleSortByName}>ASCENDENTE</button>

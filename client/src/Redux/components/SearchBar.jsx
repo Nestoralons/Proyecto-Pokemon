@@ -1,7 +1,9 @@
 import React  from "react";
 import {useState} from "react";
 import {useDispatch} from 'react-redux';
-import {getpokemonname} from '../actions/actions'
+import {getpokemonname} from '../actions/actions';
+import styles from './SearchBar.module.css';
+import { Link } from "react-router-dom";
 
 export default function SearchBar() {
     const dispatch = useDispatch()
@@ -15,9 +17,17 @@ export default function SearchBar() {
         setNombre('')
     }
     return (
-        <div>
-            <input type='text' placeholder='Buscar...' onChange={handleChange} value={nombre}/>
-            <button type='submit' onClick={handleSubmit}>BUSCAR</button>
+        <div className={styles.barra}>
+            <div className={styles.margen}>
+           <Link to='/'>
+            <button className={styles.boton}>Regresar</button>
+           </Link>
+            </div>
+          <div className={styles.margen}> 
+
+            <input className={styles.input} type='text' placeholder='Nombre...' onChange={handleChange} value={nombre}/>
+            <button className={styles.boton1} type='submit' onClick={handleSubmit}>BUSCAR</button>
+          </div>
         </div>
     )
 }

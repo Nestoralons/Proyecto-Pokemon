@@ -1,0 +1,46 @@
+.div{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 400px;
+    height: 600px;
+
+}
+.imagen{
+    
+        width:90%;
+    
+}
+.foto{
+    width: 90%;
+    height: 90%;
+    margin:20px 80px;
+
+   
+    
+}
+.cuadro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+    height: 15%;
+    background-color: #94565677;
+    border-radius: 999px;
+
+}
+.tipos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 30px;
+}
+.h{
+    margin-bottom: 0;
+    font-size:1.5rem;
+}
+.techo{
+    margin-top: 0;
+    font-size:1.5rem;
+}

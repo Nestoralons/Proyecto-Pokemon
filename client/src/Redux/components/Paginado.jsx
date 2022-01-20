@@ -20,17 +20,28 @@ setPage(number)
 setValor(Math.random())
 }
     return (
-        <div>
-       <Nav Pagina={setPage} setValor={setValor}/>
-           {Pages.map(el=><button className={styles.boton} key ={el} onClick={(e)=>handleClick(e,el)}>{el}</button>)
-}
+        <div className={styles.filas}>
+            <div className={styles.Navegacion}>
 
-{
+       <Nav Pagina={setPage} setValor={setValor}/>
+            </div>
+    <div className={styles.pokemones}>
+        <div className={styles.paginado}>
+
+           {Pages.map(el=><button className={styles.boton} key ={el} onClick={(e)=>handleClick(e,el)}>{el}</button>)
+
+}
+        </div>
+        <div className={styles.lista}>
+
+{   
               Pokemones.length? Pokemones.map(elemento=>{
                   return <Pokemons Nombre={elemento.Nombre} Imagen={elemento.Imagen} Tipo={elemento.Tipo} key={elemento.ID} ID={elemento.ID}/>
               } 
                 ): <p>No se ha encontrado ningún pokemon </p> 
           }
+        </div>
+    </div>
        
         </div>
     )

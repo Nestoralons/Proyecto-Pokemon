@@ -18,9 +18,7 @@ function Home() {
     
     return (
         <div className={styles.portada}>
-            <h1>
-              POKEMONS
-          </h1>
+           
         <SearchBar/>
         
           <Paginado pokemons={pokemons} setValor={setValor}/>
