@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from 'react-router-dom'
 import styles from './Pokemons.module.css'
 
-function Pokemons({Nombre,Imagen,Tipo,ID}) {
+function Pokemons({Nombre,Imagen,Tipo,ID,Effort}) {
     return (
         <div className={styles.div}>
             <div className={styles.imagen}>
@@ -12,6 +12,7 @@ function Pokemons({Nombre,Imagen,Tipo,ID}) {
             </Link>
             </div>
             <h1>{Nombre? Nombre[0].toUpperCase()+Nombre.slice(1):''}</h1>
+            
             <div className={styles.cuadro}>
 
             <h2 className={styles.h}>Tipo</h2>

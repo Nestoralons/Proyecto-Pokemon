@@ -3,7 +3,7 @@ import {useState,useEffect} from "react";
 import { useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
 import { gettypes } from "../actions/actions";
-import { Post } from "../actions/actions";
+import { Post ,getallpokemons } from "../actions/actions";
 import imagen from '../imagen/pokemondefault.jpg'
 import {Link} from 'react-router-dom';
 import styles from './Create.module.css'
@@ -78,6 +78,7 @@ setData({
                       ...Data,
                       Imagen:imagen
                   }))
+                   dispatch(getallpokemons())
                     setData({
                          Nombre:'',
                     Altura:0,
@@ -91,8 +92,11 @@ setData({
                     Tipo:[]
                         
                     })
+                    
+                    alert('¡POKEMON CREADO EXITOSAMENTE!')
                 }else{
                   dispatch(Post(Data))
+                  dispatch(getallpokemons())
                   setData({
                     Nombre:'',
                Altura:0,
@@ -106,7 +110,7 @@ setData({
                Tipo:[]
                    
                })
-               alert('¡POKEMON CRADO EXITOSAMENTE!')
+               alert('¡POKEMON CREADO EXITOSAMENTE!')
                 }
                 
             

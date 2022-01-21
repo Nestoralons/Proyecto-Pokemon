@@ -3,8 +3,11 @@ const {Pokemon, Tipos,Op}=require('../db.js')
 module.exports={
     getInfoApi:async()=>{
     try{
-        let array=await axios.get('https://pokeapi.co/api/v2/pokemon?limit=40')
+        let array=await axios.get('https://pokeapi.co/api/v2/pokemon')
+        // let array2=await axios.get(array.data.next);
+        // let lista2= array2.data.results.map(elemento=>axios.get(elemento.url))
         let lista= array.data.results.map(elemento=>axios.get(elemento.url))
+        // let variable=[...lista,...lista2]
         let result=await Promise.all(lista)
         .then((data)=>
            data.map(elemento=>{
@@ -12,7 +15,10 @@ module.exports={
             Nombre:elemento.data.name,
                   Tipo:elemento.data.types.map(elemento=>elemento.type.name),
                    Imagen:elemento.data.sprites.other.dream_world.front_default,
-               Fuerza:elemento.data.stats[1].base_stat}
+               Fuerza:elemento.data.stats[1].base_stat,
+               Effort:elemento.data.stats[1].effort
+            }
+               
            })
            
            //     result= data.data.map(info=>
@@ -37,7 +43,7 @@ module.exports={
 getinfoDB:async ()=>{
     try {
         const Mapeo=await Pokemon.findAll({
-        attributes:['Nombre','Imagen','ID','Fuerza'],
+        attributes:['Nombre','Imagen','ID','Fuerza','Effort'],
         include:{
         model:Tipos,
         attributes:['Tipo'],
@@ -55,7 +61,8 @@ getinfoDB:async ()=>{
             Nombre:elemento.Nombre,
             Imagen:elemento.Imagen,
             Fuerza:elemento.Fuerza,
-            Tipo:elemento.tipos.map(elemento=>elemento.Tipo)
+            Tipo:elemento.tipos.map(elemento=>elemento.Tipo),
+            Effort:elemento.Effort
             
         }
     })
