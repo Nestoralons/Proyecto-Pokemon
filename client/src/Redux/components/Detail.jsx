@@ -29,15 +29,15 @@ function handleborrador(){
           
                     <div className={styles.imagen}>
 
-                    <img className={styles.foto} src={detail.Imagen} alt='Foto'/>
+                    <img className={styles.foto} src={detail?.Imagen} alt='Foto'/>
                  
                     </div>
                     <div className={styles.datos}>
                         <h1>{detail.Nombre? detail.Nombre[0].toUpperCase()+detail.Nombre.slice(1): ''}</h1>
             
-                         <h3 className={styles.casilla}>{`Número  ${detail.ID}`}</h3>
-                        <h3 className={styles.casilla}>{`Altura   ${detail.Altura}`}</h3>
-                        <h3 className={styles.casilla}>{`Peso   ${detail.Peso}`}</h3>
+                         <h3 className={styles.casilla}>{`Número  ${detail?.ID}`}</h3>
+                        <h3 className={styles.casilla}>{`Altura   ${detail?.Altura}`}</h3>
+                        <h3 className={styles.casilla}>{`Peso   ${detail?.Peso}`}</h3>
                         <div className={styles.cajatipo}>
 
                         <h3 className={styles.casilla}>Tipo</h3>
@@ -48,10 +48,10 @@ function handleborrador(){
                         <div className={styles.cajita}>
                             <h2 className={styles.titulo}>Estadísticas</h2>
                             <div className={styles.fila}>
-                            <h3>{`Fuerza: ${detail.Fuerza}`}</h3>
-                            <h3>{`Vida: ${detail.Vida}`}</h3>
-                             <h3>{`Defensa: ${detail.Defensa}`}</h3>
-                            <h3>{`Velocidad: ${detail.Velocidad}`}</h3>
+                            <h3>{`Fuerza : ${detail?.Fuerza}`}</h3>
+                            <h3>{`Vida : ${detail?.Vida}`}</h3>
+                             <h3>{`Defensa : ${detail?.Defensa}`}</h3>
+                            <h3>{`Velocidad : ${detail?.Velocidad}`}</h3>
                             </div>
                         </div>
                      </div>

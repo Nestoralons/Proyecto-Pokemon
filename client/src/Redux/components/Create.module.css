@@ -11,6 +11,7 @@
     position:fixed;
     min-width: 100%;
     min-height: 100%;
+    font-family: 'Cinzel Decorative', cursive;
     animation: mov 6s linear infinite alternate;
     
 
@@ -31,11 +32,11 @@
     background-size:190%;
     margin-top:10px;
     background-image: linear-gradient(to left, rgb(230, 197, 90),#641c34,rgb(230, 197, 90));
-    
+    font-family: 'Cinzel Decorative', cursive;
     height: 4rem;
     color: rgb(248, 248, 248);
     font-size:30px;
-    width:300px;
+    width:fit-content;
     transition: 0.5s ;
     cursor:pointer;
     
@@ -46,6 +47,7 @@
         color:rgb(255, 255, 255);
         border-color: #dfc037;
         border-style:ridge;
+        
     }
     .margen{
     width: fit-content;
@@ -181,4 +183,10 @@
     }
     .label{
         font-size: 2em;
+    }
+    .crear{
+        text-decoration: none;
+        width: auto;
+        border-radius: 900px;
+        
     }

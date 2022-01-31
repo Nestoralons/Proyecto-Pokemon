@@ -40,9 +40,9 @@ function handleSortByName(e){
    
 }
     return (
-        <div>
-        <Link to='/Pokemons/create'>
-        <h2>Crear Pokemon</h2>
+        <div >
+        <Link className={styles.link} to='/Pokemons/create'>
+        <h2 className={styles.crear}>Crear Pokemon</h2>
          </Link>
             
         <h2 className={styles.h2}>TIPOS</h2>

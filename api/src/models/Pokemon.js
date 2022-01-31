@@ -34,10 +34,7 @@ module.exports = (sequelize) => {
     Imagen:{
       type: DataTypes.STRING,
       allowNull: false,
-    },Effort: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+    }
 
   });
 };

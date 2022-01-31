@@ -1,9 +1,10 @@
 .boton{
  padding: 14px 20px;
  border-radius: 30px;
- font-size: 1em;
+ font-size: 1.5em;
  cursor:pointer;
  background-color:rgb(230, 197, 90);
+ font-family: 'Cinzel Decorative', cursive;
 }
 .boton:hover{
     background-color:rgb(231, 190, 57)
@@ -27,18 +28,39 @@
 .boton1{
     padding: 10px 20px;
     border-radius: 30px;
-    font-size: 1.5em;
+    font-size: 1.7em;
     cursor:pointer;
     background-color:rgb(230, 197, 90);
+    font-family: 'Cinzel Decorative', cursive;
+
    }
    .boton1:hover{
        background-color:rgb(231, 190, 57)
    }
    .h2{
        margin-bottom: 0%;
+       margin-top: 5px;
    }
    .crear{
        color:black;
-
+       width: 250px;
+       height: 50px;
+       border-radius: 900px;
        text-decoration:none;
+       background-color:rgb(230, 197, 90);
+       text-align:center;
+       padding-top:20px;
+       padding-bottom:1px;
+       margin-left: 135px;
+       margin-bottom: 5px;
    }
+   .link{
+    text-decoration:none;
+    
+   }
+   .h3{
+       margin-top: 0;
+       margin-bottom: 0;
+   }
+  
+ 

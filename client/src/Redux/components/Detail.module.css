@@ -11,6 +11,7 @@
     position:fixed;
     min-width: 100%;
     min-height: 100%;
+     font-family: 'Cinzel Decorative', cursive;
     animation: mov 6s linear infinite alternate;
     
 
@@ -31,11 +32,11 @@
     background-size:190%;
     margin-top:10px;
     background-image: linear-gradient(to left, rgb(230, 197, 90),#641c34,rgb(230, 197, 90));
-    
+    font-family: 'Cinzel Decorative', cursive;
     height: 4rem;
     
     font-size:30px;
-    width:300px;
+    width:fit-content;
     transition: 0.5s ;
     cursor:pointer;
     
@@ -116,7 +117,7 @@
         flex-direction: row;
         column-gap:50px;
         justify-content: center;
-        font-size:1.5rem;
+        font-size:2rem;
     }
     .cajatipo{
         display:flex;

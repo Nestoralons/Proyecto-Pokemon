@@ -38,7 +38,7 @@ setValor(Math.random())
               Pokemones.length? Pokemones.map(elemento=>{
                   return <Pokemons Nombre={elemento.Nombre} Imagen={elemento.Imagen} Tipo={elemento.Tipo} key={elemento.ID} ID={elemento.ID} Effort={elemento.Effort}/>
               } 
-                ): <p>No se ha encontrado ningún pokemon </p> 
+                ): <h2 className={styles.aviso}>No se ha encontrado ningún pokemon </h2> 
           }
         </div>
     </div>

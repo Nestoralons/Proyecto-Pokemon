@@ -11,6 +11,7 @@
     position:fixed;
     min-width: 100%;
     min-height: 100%;
+    font-family: 'Cinzel Decorative', cursive;
     animation: mov 6s linear infinite alternate;
     
 
@@ -33,6 +34,7 @@
     margin:5px;
     font-size:2em;
     cursor:pointer;
+    
 }
 .filas{
     display:flex;
@@ -82,4 +84,8 @@
 .lista::-webkit-scrollbar-thumb{
     background: #8f8f8f; 
     border-radius: 4px;
+}
+.aviso{
+    font: size 20rem;
+    margin-top:300px
 }

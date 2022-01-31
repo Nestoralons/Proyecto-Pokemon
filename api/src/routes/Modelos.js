@@ -3,7 +3,8 @@ const {Pokemon, Tipos,Op}=require('../db.js')
 module.exports={
     getInfoApi:async()=>{
     try{
-        let array=await axios.get('https://pokeapi.co/api/v2/pokemon')
+        let array=await axios.get('https://pokeapi.co/api/v2/pokemon?limit=20')
+
         // let array2=await axios.get(array.data.next);
         // let lista2= array2.data.results.map(elemento=>axios.get(elemento.url))
         let lista= array.data.results.map(elemento=>axios.get(elemento.url))
@@ -16,7 +17,7 @@ module.exports={
                   Tipo:elemento.data.types.map(elemento=>elemento.type.name),
                    Imagen:elemento.data.sprites.other.dream_world.front_default,
                Fuerza:elemento.data.stats[1].base_stat,
-               Effort:elemento.data.stats[1].effort
+               
             }
                
            })
@@ -43,7 +44,7 @@ module.exports={
 getinfoDB:async ()=>{
     try {
         const Mapeo=await Pokemon.findAll({
-        attributes:['Nombre','Imagen','ID','Fuerza','Effort'],
+        attributes:['Nombre','Imagen','ID','Fuerza'],
         include:{
         model:Tipos,
         attributes:['Tipo'],
@@ -62,7 +63,7 @@ getinfoDB:async ()=>{
             Imagen:elemento.Imagen,
             Fuerza:elemento.Fuerza,
             Tipo:elemento.tipos.map(elemento=>elemento.Tipo),
-            Effort:elemento.Effort
+           
             
         }
     })
