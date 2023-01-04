@@ -3,6 +3,7 @@ import {useState} from "react";
 import Pokemons from './Pokemons'
 import Nav from './Nav';
 import styles from './Paginado.module.css'
+import Spinner from './Spinner'
 export default function Paginado({pokemons,setValor}) {
     const [Page,setPage]=useState(1);
   const count=pokemons.length 
@@ -19,7 +20,10 @@ e.preventDefault()
 setPage(number)
 setValor(Math.random())
 }
+
     return (
+
+        
         <div className={styles.filas}>
             <div className={styles.Navegacion}>
 
@@ -28,19 +32,22 @@ setValor(Math.random())
     <div className={styles.pokemones}>
         <div className={styles.paginado}>
 
-           {Pages.map(el=><button className={styles.boton} key ={el} onClick={(e)=>handleClick(e,el)}>{el}</button>)
-
-}
+           {Pages.map(el=><button className={styles.boton} key ={el} onClick={(e)=>handleClick(e,el)}>{el}</button>)}
         </div>
         <div className={styles.lista}>
+      
 
 {   
-              Pokemones.length? Pokemones.map(elemento=>{
+
+Pokemones.length? Pokemones.map(elemento=>{
                   return <Pokemons Nombre={elemento.Nombre} Imagen={elemento.Imagen} Tipo={elemento.Tipo} key={elemento.ID} ID={elemento.ID} Effort={elemento.Effort}/>
               } 
-                ): <h2 className={styles.aviso}>No se ha encontrado ningún pokemon </h2> 
+                ): <Spinner />
           }
+          
+        
         </div>
+                 
     </div>
        
         </div>

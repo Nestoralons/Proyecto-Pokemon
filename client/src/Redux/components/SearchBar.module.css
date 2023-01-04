@@ -25,15 +25,16 @@
     .margen{
     width: fit-content;
     height: fit-content;
-    margin:28px 30px;
+    margin:5px 5px;
     }
+
     .barra{
     display:flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content:space-between ;
     align-content: center;
-    height: 5%;
+    height: 2%;
     width: 100%;
     
     }

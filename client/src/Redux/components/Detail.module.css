@@ -1,5 +1,5 @@
 .portada{
-    background-image: linear-gradient(to bottom right,
+    /* background-image: linear-gradient(to bottom right,
     #5d1a23 0%,
     #5f252a 20%,
     #aa3a3e 40%,
@@ -7,7 +7,10 @@
     #9b3134 80%
 );
     background-repeat: no-repeat;
-    background-size:200% 200% ;
+    background-size:200% 200% ; */
+    background-image: url(../imagen/Pokemon-Unite-llega-a-mas-jugadores-y-con-una-nueva-temporada-lavidaesunvideojuego.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100% ;
     position:fixed;
     min-width: 100%;
     min-height: 100%;
@@ -17,7 +20,7 @@
 
 }
 
-@keyframes mov{
+/* @keyframes mov{
     from {
         background-position: 0 0;
 
@@ -25,6 +28,12 @@
     to{
         background-position: 100% 100%;
     }
+} */
+.focus{
+    backdrop-filter: blur(7px);
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
 }
 .boton {
     border: 3px solid rgba(100,100,100,0.1);
@@ -52,7 +61,7 @@
     width: fit-content;
     margin:30px 30px
     }
-    .caja{
+    /* .caja{
         width: 95%;
         height: 80%;
         position: absolute;
@@ -130,4 +139,54 @@
         margin-top:0px;
         
     }
-    
+     */
+     .block{
+        display: flex;
+        flex-direction: row;
+        column-gap: 5%;
+        width: 100%;
+     }
+     .blockTitle{
+        width: 32%,
+      }
+      .statName {
+       
+        font-weight: bold;
+        font-size: 1.2em;
+   
+      }
+      .blockInfo{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 5%;
+     
+      }
+      .bgBar {
+        background-color: #858484;
+        width: 80%;
+        height: 15%;
+        border-radius: 22px;
+        overflow: hidden;
+        border-color: yellow;
+      }
+      .ancho{
+        width: 50%;
+      }
+      .fila{
+        display:flex;
+        flex-direction: row;
+        height: 90%;
+      }
+      .imagen{
+        width: 50%;
+        height: 100%;
+        
+        
+    }
+    .foto{
+       width: 65%;
+     
+        
+    }

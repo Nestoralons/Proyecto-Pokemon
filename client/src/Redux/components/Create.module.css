@@ -1,22 +1,40 @@
 .portada{
-    background-image: linear-gradient(to bottom right,
+    /* background-image: linear-gradient(to bottom right,
 #5d1a23 0%,
 #5f252a 20%,
 #aa3a3e 40%,
 #7c2427 60%,
 #9b3134 80%
-);
-    background-repeat: no-repeat;
-    background-size:200% 200% ;
+); */
+    /* background-repeat: no-repeat;
+    background-size:200% 200% ; */
     position:fixed;
     min-width: 100%;
     min-height: 100%;
     font-family: 'Cinzel Decorative', cursive;
-    animation: mov 6s linear infinite alternate;
+    /* animation: mov 6s linear infinite alternate; */
+    /* background-color: white; */
+    background-image: url(../imagen/Pokemon-Unite-llega-a-mas-jugadores-y-con-una-nueva-temporada-lavidaesunvideojuego.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100% ;
+    position:fixed;
+    min-width: 100%;
+    min-height: 100%;
+    font-weight: bolder;
     
 
 }
-
+/* .form{
+    overflow-y: scroll;
+}
+.form::-webkit-scrollbar{
+    width: 6px;
+}
+.form::-webkit-scrollbar-thumb{
+    background: #1f9dd4; 
+    border-radius: 4;
+} */
+/* 
 @keyframes mov{
     from {
         background-position: 0 0;
@@ -25,6 +43,22 @@
     to{
         background-position: 100% 100%;
     }
+} */
+.h1{
+    margin-top:0;
+  margin-bottom: 0;
+}
+.principal{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+
 }
 .boton {
     border: 3px solid rgba(100,100,100,0.1);
@@ -33,12 +67,13 @@
     margin-top:10px;
     background-image: linear-gradient(to left, rgb(230, 197, 90),#641c34,rgb(230, 197, 90));
     font-family: 'Cinzel Decorative', cursive;
-    height: 4rem;
-    color: rgb(248, 248, 248);
+    height: 7%;
+    color: rgb(212, 65, 65);
     font-size:30px;
     width:fit-content;
     transition: 0.5s ;
     cursor:pointer;
+    margin-left: 10px;
     
     
     }
@@ -51,18 +86,62 @@
     }
     .margen{
     width: fit-content;
-    margin:30px 30px
+   height: 7%;
+    }
+    .bkg{
+        width: 100%;
+        height: 100%;
+        /* backdrop-filter: blur(9px); */
+    
+    }
+    .container{
+        /* width: 80%;
+        height: 80%; */
+        width: 80%;
+        height: 80%;
+       display:flex;
+       flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 25px;
+    backdrop-filter: blur(6px)
+     }
+     .nuevo{
+        display: flex;
+        flex-direction: row;
+     }
+    .tamaño{
+        height: 100%;
+        width: 55%;
+    }
+    .tamaño1{
+        height: 100%;
+        width: 45%;
+    }
+    .cajita{
+        display: flex;
+        flex-direction: row;
+        column-gap: 2%;
+        height: 15%;
+        margin-bottom: 2%;
+    
+        
+    }
+    .estiloc{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2%; 
     }
     .texto{
    height: 100vh;
-        color:aliceblue;
+        color:black;
      top:0;
      left:0;
      right: 0;
      bottom:0;
      margin-bottom: 0;
     align-self: stretch;
-    font-size: 1rem;
+    font-size: 1.2em;
     
     }
     .datos{
@@ -77,13 +156,13 @@
     }
     .input{
         border:none ;
-        background-color:#ffffff71 ;
+        background-color:#00000071 ;
         border-radius: 20px;
-        width: 15rem;
-        height: 3rem;
+        width: 40%;
+        height: 5%;
     
         transition: background-color 0.3s;
-        font-size: 2rem;
+        font-size: 1.2em;
         font-weight: 300;
         text-align:center;
         transition: background-color 0.25s
@@ -97,13 +176,13 @@
     }
     .input1{
         border:none ;
-        background-color:#ffffff71 ;
+        background-color:#00000071 ;
         border-radius: 0.5rem;
-        width: 4rem;
-        height: 2rem;
+        width: 20%;
+        height:35%;
 
         transition: background-color 0.3s;
-        font-size: 1.5rem;
+        font-size: 1.2em;
         font-weight: 30;
         text-align: center;
         
@@ -120,39 +199,58 @@
     .separacion{
         display: flex;
         flex-direction: row;
-        column-gap: 30px;
+        column-gap: 5%;
         align-items: center;
         justify-content: center;
-        font-size: 2em;
+        font-size: 1.3em;
+        height: 20%;
+        margin-top:2%;
+        
+        
         
     }
     .separacionn1{
         display: flex;
         flex-direction: row;
-        column-gap: 60px;
+        column-gap: 15%;
         align-items: center;
-        justify-content: center;
-        font-size: 2em;
-        margin-left: 79px;
-        width: 84%;
+        justify-content:center;
+        font-size: 1.3em;
+        
+        width: 50%;
+    }
+    .bola{
+        width: 9%;
+        height:9%;
+    }
+    .bola:hover{
+        transition: 4s;
+        transform: rotate(360deg);
+    }
+   
+    .botonf{
+        height: 10%;
+    
+    }
+    .poke{
+        border-color: white;
+        background-color: white;
+        width: 85%;
+    
     }
     .separacionn2{
         display: flex;
         flex-direction: row;
-        column-gap: 35px;
+        column-gap: 5%;
         align-items: center;
         justify-content: center;
-        font-size: 2em;
-        margin-left: 78px;
-        width: 84%;
+        font-size: 1.3em;
+
+        width: 50%;
     }
     .s{
-        display:flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: space-evenly;
-        justify-content: space-evenly;
-        margin-top:40px;
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
     }
     .sep{
         display: flex;
@@ -160,20 +258,28 @@
         column-gap: 20px;
         align-items: center;
         justify-content: center;
-        font-size: 2em;
+        font-size: 1.3em;
         margin-left: 10px;
       
     }
+    .tiposmar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:2%
+    }
     .tipos{
         height: 25%;
-        display:flex;
+        /* display:flex;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        column-gap: 95px;
-        row-gap: 5px;
-        font-size: 2em;
+        column-gap: 5%;
+        row-gap: 5%;
+        font-size: 1.2em; */
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
         
     }
     .circulo{

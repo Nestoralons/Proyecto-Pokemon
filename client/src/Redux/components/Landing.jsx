@@ -4,6 +4,7 @@ import {useEffect } from "react";
 import {useDispatch} from 'react-redux';
 import { getallpokemons, gettypes } from '../actions/actions';
 import styles from './Landing.module.css';
+import imagen1 from '../imagen/pokeball.png'
 export default function Landing() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -14,37 +15,18 @@ export default function Landing() {
 
     return (
         <div className={styles.portada}>
-        <div className={styles.bkg}/>
-          <div className={styles.container}>
-              
+        
 
 
-
-
-              <div className={styles.spinner}>
-                </div>
-                <div className={styles.fondo}>
-                <h1 className={styles.texto}>Find</h1>
-                <h1 className={styles.texto}>Your</h1>
-                <h1 className={styles.texto}>Pokemon</h1>
-            </div>
-            <div className={styles.entrada}>
-            
-              
-
-          <Link to='/Pokemons'>
-            <button className={styles.boton}>
-            
-              Ingresar</button>
+      <div className={styles.position}>
+        <Link to='/Pokemons'>
+            {/* <button className={styles.boton}>WELCOME</button> */}
+            {/* <div className={styles.botonf}> */}
+                                
+                                 <input className={styles.bola} type='image' src={imagen1} alt='submitButoon' />
+                                 {/* </div> */}
           </Link>
-
-
-
-            </div>
-          </div>
-
-
-         
+        </div>
         </div>
     )
 }

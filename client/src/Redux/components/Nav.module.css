@@ -1,19 +1,25 @@
 .boton{
- padding: 14px 20px;
+ padding: 7px 10px;
  border-radius: 30px;
- font-size: 1.5em;
  cursor:pointer;
  background-color:rgb(230, 197, 90);
- font-family: 'Cinzel Decorative', cursive;
+ font-family: 'Cinzel Decorative';
+ font-weight: bolder;
 }
 .boton:hover{
     background-color:rgb(231, 190, 57)
+}
+.container{
+    height: 100%;
 }
 .filtro{
     display:flex;
     flex-direction: row;
     justify-content: center;
-    column-gap: 40px;
+    flex-wrap: wrap;
+    column-gap: 1vw;
+    row-gap: 1vh;
+    height: 50%;
 }
 .tipos{
     display: flex;
@@ -24,6 +30,7 @@
     column-gap: 10px;
     row-gap: 5px;
     font-size: 0.8em;
+    height: 50%;
 }
 .boton1{
     padding: 10px 20px;
@@ -31,7 +38,8 @@
     font-size: 1.7em;
     cursor:pointer;
     background-color:rgb(230, 197, 90);
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Cinzel Decorative';
+    font-weight: bolder;
 
    }
    .boton1:hover{
@@ -40,19 +48,22 @@
    .h2{
        margin-bottom: 0%;
        margin-top: 5px;
-   }
-   .crear{
        color:black;
-       width: 250px;
-       height: 50px;
+       font-family: 'Cinzel Decorative';
+       font-weight: bolder;
+   }
+.crear{
+       color:black;
+       width: 20vw;
+       height: 2%;
        border-radius: 900px;
        text-decoration:none;
        background-color:rgb(230, 197, 90);
        text-align:center;
        padding-top:20px;
        padding-bottom:1px;
-       margin-left: 135px;
-       margin-bottom: 5px;
+       /* margin-left: 135px;
+       margin-bottom: 5px; */
    }
    .link{
     text-decoration:none;
@@ -63,4 +74,39 @@
        margin-bottom: 0;
    }
   
- 
+ .select{
+    width:80%;
+    height: 80%;
+    display: inline-block;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: rgb(230, 197, 90);
+	color: #1f1f1f;
+	font-size: 1.3em;
+	font-family: 
+	'Cinzel Decorative';
+    font-weight: bolder;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    text-align: center;
+ }
+ .select::-webkit-scrollbar{
+    width: 6px;
+}
+.select::-webkit-scrollbar-thumb{
+    background: #ffe606; 
+    border-radius: 4px;
+}.select::-webkit-scrollbar-track{
+    background: #0613ff; 
+    border-radius: 4px;
+}
+ .filtra{
+    height: 20%;
+    display:flex;
+    flex-direction: column;
+    row-gap:10%;
+ }

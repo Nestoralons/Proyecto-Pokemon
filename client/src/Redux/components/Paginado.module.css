@@ -1,5 +1,5 @@
 .portada{
-    background-image: linear-gradient(to bottom right,
+    /* background-image: linear-gradient(to bottom right,
     #5d1a23 0%,
 #5f252a 20%,
 #aa3a3e 40%,
@@ -12,12 +12,22 @@
     min-width: 100%;
     min-height: 100%;
     font-family: 'Cinzel Decorative', cursive;
-    animation: mov 6s linear infinite alternate;
+    animation: mov 6s linear infinite alternate; */
+    /* background-color: white; */
+    position:fixed;
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url(../imagen/Pokemon-Unite-llega-a-mas-jugadores-y-con-una-nueva-temporada-lavidaesunvideojuego.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100% ;
+    position:fixed;
+    min-width: 100%;
+    min-height: 100%;
     
 
 }
 
-@keyframes mov{
+/* @keyframes mov{
     from {
         background-position: 0 0;
 
@@ -25,7 +35,7 @@
     to{
         background-position: 100% 100%;
     }
-}
+} */
 .boton{
     background-color:#ce7885;
     border-color: white;
@@ -39,53 +49,73 @@
 .filas{
     display:flex;
     flex-direction: row;
+    min-height: 90vh;
+
 
 }
+
 .Navegacion{
-    width: 27%;
-    height: 100%;
-    margin-left: 20px;
-    margin-top: 20px;
+    width: 25vw;
+    height: 70vh;
     background-color:transparent;
-    padding-left: 12px;
-    padding-bottom: 15px;
-    border-radius:99px;
+  
     border-style: ridge;
-    border-color:  linear-gradient(to left, rgb(230, 197, 90),#641c34,rgb(230, 197, 90));;
+
+
+ 
 
 }
 
 .pokemones{
     width: 73%;
-    height: 100%;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+   
 }
 .paginado{
     display: flex;
     flex-direction: row;
     justify-content: center;
     column-gap: 30px;
+    height: 10%;
 }
 .lista{
-    height: 80vh;
+    height: 70vh;
     width: 100%;
     overflow-y: scroll;
     display: flex;
     flex-wrap: wrap;
-    margin-right: 1rem;
-    justify-content: space-evenly;
-    column-gap: 20px;
+    margin-top:2% ;
+    margin-left: 2%;
+    margin-right: 2%;
+     justify-content: space-evenly; 
+    column-gap: 2%;
+    row-gap: 3%;
+    padding-bottom: 10px ;
+    
+    /* display:grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(150px, 1fr)
+    );
+    gap:16px; */
+   
 }
 .lista::-webkit-scrollbar{
     width: 6px;
 }
 .lista::-webkit-scrollbar-thumb{
-    background: #8f8f8f; 
+    background: #da0e0e; 
     border-radius: 4px;
 }
 .aviso{
     font: size 20rem;
     margin-top:300px
+}
+.spiner{
+    margin-left: 25%;
+    width: 60%;
+    
 }

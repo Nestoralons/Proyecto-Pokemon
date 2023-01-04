@@ -20,13 +20,13 @@ export default function SearchBar() {
         <div className={styles.barra}>
             <div className={styles.margen}>
            <Link to='/'>
-            <button className={styles.boton}>Regresar</button>
+            <button className={styles.boton}>Go Back</button>
            </Link>
             </div>
           <div className={styles.margen}> 
 
-            <input className={styles.input} type='text' placeholder='Nombre...' onChange={handleChange} value={nombre}/>
-            <button className={styles.boton1} type='submit' onClick={handleSubmit}>BUSCAR</button>
+            <input className={styles.input} type='text' placeholder='Search' onChange={handleChange} value={nombre}/>
+            <button className={styles.boton1} type='submit' onClick={handleSubmit}>SEARCH</button>
           </div>
         </div>
     )

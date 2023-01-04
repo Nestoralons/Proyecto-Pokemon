@@ -37,7 +37,12 @@ export default function rootReducer(state=initialState,action) {
                 }
             case FILTER:{
                     let filtrado=state.AllPokemons;
-                    let filtro=filtrado.filter(el=>el.Tipo.includes(action.payload))
+                    let filtro
+                    if (action.payload==='no-category'){
+                          filtro=filtrado}
+                         else{
+                            filtro=filtrado.filter(el=>el.Tipo.includes(action.payload))
+                         }
         
                     return {
                         ...state,
@@ -64,10 +69,10 @@ export default function rootReducer(state=initialState,action) {
         }case SORT_BY_NAME:{
             let sort=state.AllPokemons;
             let sortbyname=action.payload==='ASC'? sort.sort((a,b)=>{
-                if (a.Nombre > b.Nombre) {
+                if (a.Nombre.toLowerCase() > b.Nombre.toLowerCase()) {
                       return 1;
                     }
-                    if (a.Nombre < b.Nombre) {
+                    if (a.Nombre.toLowerCase() < b.Nombre.toLowerCase()) {
                       return -1;
                     }
                     // a must be equal to b
@@ -75,10 +80,10 @@ export default function rootReducer(state=initialState,action) {
                   
         
             ):sort.sort((a,b)=>{
-                if (a.Nombre > b.Nombre) {
+                if (a.Nombre.toLowerCase() > b.Nombre.toLowerCase()) {
                       return -1;
                     }
-                    if (a.Nombre < b.Nombre) {
+                    if (a.Nombre.toLowerCase() < b.Nombre.toLowerCase()) {
                       return 1;
                     }
                     // a must be equal to b

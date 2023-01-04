@@ -1,21 +1,38 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 import styles from './Pokemons.module.css'
+import getColorByPokemonType from '../../utils/getColorByPokemonType.js'
+const estilo={
+    display:'flex',
+    flexDirection:'column',
+    width: '27%',
+    height: '60%',
+    padding: '5px 5px',
+    borderRadius: '12px',
 
+}
 function Pokemons({Nombre,Imagen,Tipo,ID,Effort}) {
+    const stylecolor=getColorByPokemonType(Tipo[0])
+     const bgStyles = { backgroundColor: stylecolor,...estilo};
+    
     return (
-        <div className={styles.div}>
+        <div style={bgStyles}>
+            <h1   className={styles.h1}>{Nombre? Nombre[0].toUpperCase()+Nombre.slice(1):''}</h1>
+            
             <div className={styles.imagen}>
             <Link to={`/Pokemons/${ID}`}>
 
             <img className={styles.foto}src={Imagen} alt={Nombre} />
             </Link>
             </div>
-            <h1>{Nombre? Nombre[0].toUpperCase()+Nombre.slice(1):''}</h1>
+          
+
+            
             
             <div className={styles.cuadro}>
 
-            <h2 className={styles.h}>Tipo</h2>
+
+            <h2 className={styles.h}>Type</h2>
       <div className={styles.tipos}>
 
         {Tipo &&Tipo.map(elemento=>{

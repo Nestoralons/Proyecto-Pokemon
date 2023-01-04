@@ -1,5 +1,6 @@
 .portada{
-    background-image: url(../imagen/Pokemonnegro.jpg);
+    /* background-image: url(../imagen/Pokemonnegro.jpg); */
+    background-image: url(../imagen/wallpapersden.com_red-and-pikachu-pokemon_1920x1080.jpg);
     background-repeat: no-repeat;
     background-size:100% 100% ;
     position:fixed;
@@ -8,58 +9,6 @@
 }
 
 
-.texto{
-    padding-top:5px;
-    color:aliceblue;
-    position:static;
-    font-family: 'Major Mono Display', monospace;
-    font-size:2.3em;
-   
-
-}
-.bkg{
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(7px);
-
-}
-.container{
-    width: 80%;
-    height: 70%;
-    position: absolute;
-    margin: 15vh 10vw;
-    overflow:hidden;
-    background-image: url(../imagen/Pokemonnegro.jpg);
-    background-repeat: no-repeat;
-    background-size:cover ;
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 3rem;
-    border-color: rgb(25, 207, 18);
-    border-width:0.5rem;
-    border-style:ridge;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    
-}
-
-.entrada{
-    display: flex;
-   
-    width:300px;
-    margin-top:10px;
-    justify-content: center;
-    flex-direction: column;
-    align-content: center;
-    row-gap: 75px;
-    margin-left:0px;
-    margin-left: 130px;
-
-}
 .boton {
     border: 3px solid rgba(100,100,100,0.1);
     border-radius: 8px;
@@ -83,37 +32,29 @@
         border-style:ridge;
     }
 
-    
-
-.spinner{
-    background: linear-gradient(to right,#10690def,rgb(230, 197, 90));
-    border-radius: 70%;
-    height: 300px;
-    width:300px;
-    position: relative;
-    margin-left: 120px;
-    margin-bottom: 67px;
+    .position{
+       margin-top: 18%;
+       margin-left: 0;
+       width: 20%;
+    }
+    .bola{
+        width: 65%;
+        height:15%;
+    }
+    .bola:hover{
+        transition: 4s;
+        transform: rotate(360deg);
+    }
    
-    animation: movimiento 3s linear infinite
-
-} 
-.fondo{
-    background:#0e0b0b;
-    height: 250px;
-    margin-left:145px;
-    margin-bottom: 147px;
-    position: absolute;
-    width:250px;
-    border-radius:50%;
+    .botonf{
+        height: 20%;
+left: 0;
     
-}  
+    
+    }
 
-@keyframes movimiento{
-    0%{
-        transform:rotate(0deg)
-    }
-    100%{
-        transform:rotate(360deg)
-    }
-}
+
+
+
+
 

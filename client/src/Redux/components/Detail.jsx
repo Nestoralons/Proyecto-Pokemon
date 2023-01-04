@@ -5,17 +5,72 @@ import {useDispatch, useSelector} from 'react-redux';
 import { getdetail,borrardetalle } from '../actions/actions';
 import styles from './Detail.module.css'
 import { Link } from 'react-router-dom';
+import Spinner from './Spinner'
+
 
 export default function Detail() {
 const {ID}=useParams();
 const dispatch=useDispatch();
 useEffect(()=>{
-    dispatch(getdetail(ID))
+    (async ()=>await dispatch(getdetail(ID)))()
 },[ID,dispatch])
 const detail=useSelector((state)=>state.Detail)
 function handleborrador(){
     dispatch(borrardetalle())
 }
+const array=detail&&[{
+    name:'Height',
+    valor:detail.Altura
+},{
+    name:'Health',
+    valor:detail.Vida
+},{
+    name:'Defense',
+    valor:detail.Defensa
+},{
+    name:'Attack',
+    valor:detail.Fuerza
+},{
+    name:'Speed',
+    valor:detail.Velocidad
+},{
+    name:'Weight',
+    valor:detail.Peso
+}]
+console.log(detail)
+const estilos={height: '100%',
+    borderRadius: '15px',}
+const barStyles = (num,nombre) => {
+    let color=''
+    if (nombre==='Weight'){
+        
+        if( num > 499){
+             color = "#00ac17"  
+            num=Math.round(num/10)
+        }else{
+             color="#ff3e3e"
+             num=Math.round(num/10)
+        }
+    }else if(nombre==='Height'){
+        if( num > 15){
+             color = "#00ac17"  
+            num=Math.round(num*3.4)
+        }else{
+            num=Math.round(num*3.4)
+             color="#ff3e3e"
+
+        }
+    }
+    else{
+        color = num > 49 ? "#00ac17" : "#ff3e3e";
+    }
+
+        console.log(color)
+    return {
+      backgroundColor: color,
+      width: `${num}%`,
+    };
+  }
     return (
         <div className={styles.portada}>
             <div className={styles.margen}>
@@ -23,39 +78,32 @@ function handleborrador(){
             <button className={styles.boton} onClick={handleborrador} >Regresar a home</button>
            </Link>
             </div>
-          
-                
-        <div className={styles.caja}>
-          
-                    <div className={styles.imagen}>
-
-                    <img className={styles.foto} src={detail?.Imagen} alt='Foto'/>
-                 
+        {detail.Altura? (<div className={styles.focus}>
+            <h2>Stats</h2>
+            <div className={styles.fila}>
+            <div className={styles.ancho}>
+            {array.map((item,index)=>{return(
+                <div key={index} className={styles.block}>
+                    <div className={styles.blockTitle} >
+                      <h4 className={styles.statName}>{item.name}</h4>  
                     </div>
-                    <div className={styles.datos}>
-                        <h1>{detail.Nombre? detail.Nombre[0].toUpperCase()+detail.Nombre.slice(1): ''}</h1>
-            
-                         <h3 className={styles.casilla}>{`Número  ${detail?.ID}`}</h3>
-                        <h3 className={styles.casilla}>{`Altura   ${detail?.Altura}`}</h3>
-                        <h3 className={styles.casilla}>{`Peso   ${detail?.Peso}`}</h3>
-                        <div className={styles.cajatipo}>
+                    <div className={styles.blockInfo}>
+                        <h4 className={styles.statName}>{item.valor}</h4>
+                        <div className={styles.bgBar}>
+                            <div style={{...estilos,...barStyles(item.valor,item.name)}}/>
+                        </div>
+                    </div>
+                    
+                </div>
+            )})}
+            </div>
+            <div className={styles.imagen}>
+            <img className={styles.foto} src={detail.Imagen} alt={`${detail.Nombre}`}/>
+            </div>
+            </div>
 
-                        <h3 className={styles.casilla}>Tipo</h3>
-                         <div className={styles.tipos}>
-                             {detail.Tipo && detail.Tipo.map(el=><p key={el}>{el[0].toUpperCase()+el.slice(1)}</p>)}
-                        </div>
-                        </div>
-                        <div className={styles.cajita}>
-                            <h2 className={styles.titulo}>Estadísticas</h2>
-                            <div className={styles.fila}>
-                            <h3>{`Fuerza : ${detail?.Fuerza}`}</h3>
-                            <h3>{`Vida : ${detail?.Vida}`}</h3>
-                             <h3>{`Defensa : ${detail?.Defensa}`}</h3>
-                            <h3>{`Velocidad : ${detail?.Velocidad}`}</h3>
-                            </div>
-                        </div>
-                     </div>
-        </div>
+        </div>)
+    :<div><Spinner/></div>}
 </div>
     )
 }
